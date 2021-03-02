@@ -27,6 +27,7 @@ import iconLink2 from "assets/img/epic-logo.png";
 import iconLink3 from "assets/img/iChips-logo.png";
 import iconLink4 from "assets/img/powerdefi.png";
 import iconLink5 from "assets/img/Powerminer-logo.png";
+import vdcLogo from "assets/img/vdc-logo.png";
 
 const useStyles = makeStyles(styles);
 
@@ -105,7 +106,7 @@ export default function HeaderLinks(props) {
                 target="_blank"
                 className={classes.navLink}
               >
-              <img src={row.img} alt="..." width="150" />
+              <img src={row.img} alt="..." width="100" />
               </Button>
             </Tooltip>
           </ListItem>
