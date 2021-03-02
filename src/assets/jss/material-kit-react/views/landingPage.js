@@ -1,7 +1,12 @@
 import { container, title } from "assets/jss/material-kit-react.js";
+import image from "assets/img/vdc-background.jpg";
 
 const landingPageStyle = {
   container: {
+    backgroundImage: "url(" + image + ")",
+    // backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',    
     zIndex: "12",
     color: "#FFFFFF",
     ...container

@@ -58,7 +58,7 @@ export default function Header(props) {
     [classes.appBar]: true,
     [classes[color]]: color,
     [classes.absolute]: absolute,
-    [classes.fixed]: fixed
+    // [classes.fixed]: fixed
   });
   const brandComponent = <Button className={classes.title}>{brand}</Button>;
   return (
@@ -77,7 +77,7 @@ export default function Header(props) {
         <Hidden smDown implementation="css">
           {rightLinks}
         </Hidden>
-        <Hidden mdUp>
+        {/* <Hidden mdUp>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -85,9 +85,9 @@ export default function Header(props) {
           >
             <Menu />
           </IconButton>
-        </Hidden>
+        </Hidden> */}
       </Toolbar>
-      <Hidden mdUp implementation="js">
+      {/* <Hidden mdUp implementation="js">
         <Drawer
           variant="temporary"
           anchor={"right"}
@@ -102,7 +102,7 @@ export default function Header(props) {
             {rightLinks}
           </div>
         </Drawer>
-      </Hidden>
+      </Hidden> */}
     </AppBar>
   );
 }

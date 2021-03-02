@@ -64,7 +64,7 @@ export default function Components(props) {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-        {/* <SectionBasics />
+        {/* <SectionBasics /> */}
         <SectionNavbars />
         <SectionTabs />
         <SectionPills />
@@ -82,7 +82,7 @@ export default function Components(props) {
           </Link>
         </GridItem>
         <SectionExamples />
-        <SectionDownload /> */}
+        <SectionDownload />
       </div>
       <Footer />
     </div>

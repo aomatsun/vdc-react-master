@@ -19,102 +19,99 @@ import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
+import telegram from "assets/img/telegram-icon.png";
+import discord from "assets/img/Discord-logo.png";
+
+import iconLink1 from "assets/img/thechosenone-logo.png";
+import iconLink2 from "assets/img/epic-logo.png";
+import iconLink3 from "assets/img/iChips-logo.png";
+import iconLink4 from "assets/img/powerdefi.png";
+import iconLink5 from "assets/img/Powerminer-logo.png";
 
 const useStyles = makeStyles(styles);
+
+const links = [
+  { title: "Per Airdrop Claim!", href: "per-airdrop-claim" },
+  { title: "Pmine loans", href: "pmine-loans" },
+  { title: "Create IOST account", href: "https://sonata.asia/accountCreation" },
+  { title: "IMATCH", href: "imatch" },
+  { title: "whitepaper", href: "powermine-whitepaper" },
+  { title: "swap-iost/trx", href: "https://coinswitch.co/?ref=O86FUWI24E" },
+];
+
+const imgRows = [
+  { id: "thechosenone", title: "TheChosenOne!", href: "thechosenone", img: iconLink1 },
+  { id: "epic", title: "EPIC!", href: "epic", img: iconLink2 },
+  { id: "ichips", title: "ICHIPS!", href: "iChips", img: iconLink3 },
+  { id: "powerdefi", title: "Powermine warriors get ready!", href: "powerdef.io", img: iconLink4 },
+  { id: "powermine", title: "Powermine warriors get ready!!", href: "", img: iconLink5 },
+];
 
 export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
+    <div>
     <List className={classes.list}>
-      <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          buttonText="Components"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
-              All components
-            </Link>,
-            <a
-              href="https://creativetimofficial.github.io/material-kit-react/#/documentation?ref=mkr-navbar"
+      {
+        links.map((row, index) => (
+          <ListItem className={classes.listItem}>
+            <Button
+              href={row.href}
+              color="transparent"
               target="_blank"
-              className={classes.dropdownLink}
+              className={classes.navLink}
             >
-              Documentation
-            </a>
-          ]}
-        />
-      </ListItem>
+              {row.title}
+            </Button>
+          </ListItem>
+        ))
+      }
       <ListItem className={classes.listItem}>
         <Button
-          href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-          color="transparent"
+          href="https://t.me/powermineclub"
           target="_blank"
+          color="transparent"
           className={classes.navLink}
         >
-          <CloudDownload className={classes.icons} /> IMATCH
+          <img src={telegram} alt="..." width="25" />
+          {/* <i className={classes.socialIcons + " fab fa-telegram"} /> */}
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        {/*<Tooltip title="Delete">
-          <IconButton aria-label="Delete">
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>*/}
-        <Tooltip
-          id="instagram-twitter"
-          title="Follow us on twitter"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
+        <Button
+          color="transparent"
+          href="https://discord.gg/M8XXzGy"
+          target="_blank"
+          className={classes.navLink}
         >
-          <Button
-            href="https://twitter.com/CreativeTim?ref=creativetim"
-            target="_blank"
-            color="transparent"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-twitter"} />
-          </Button>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-facebook"
-          title="Follow us on facebook"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://www.facebook.com/CreativeTim?ref=creativetim"
-            target="_blank"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-facebook"} />
-          </Button>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-tooltip"
-          title="Follow us on instagram"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-            target="_blank"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-instagram"} />
-          </Button>
-        </Tooltip>
+          <img src={discord} alt="..." width="25" />
+          {/* <i className={classes.socialIcons + " fab fa-discord"} /> */}
+        </Button>
       </ListItem>
     </List>
+    <List>
+      {
+        imgRows.map((row, index) => (
+          <ListItem className={classes.listItem}>
+            <Tooltip
+              id={row.id}
+              title={row.title}
+              placement={window.innerWidth > 959 ? "top" : "left"}
+              classes={{ tooltip: classes.tooltip }}
+            >
+              <Button
+                color="transparent"
+                href={row.href}
+                target="_blank"
+                className={classes.navLink}
+              >
+              <img src={row.img} alt="..." width="150" />
+              </Button>
+            </Tooltip>
+          </ListItem>
+        ))
+      }
+    </List>
+    </div>
   );
 }
