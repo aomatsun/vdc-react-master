@@ -21,6 +21,7 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import ProductSection from "./Sections/ProductSection.js";
 import TeamSection from "./Sections/TeamSection.js";
 import WorkSection from "./Sections/WorkSection.js";
+import image from "assets/img/vdc-background.jpg";
 
 const dashboardRoutes = [];
 
@@ -30,7 +31,8 @@ export default function LandingPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
   return (
-    <div>
+    // <div style={{backgroundImage: "url(" + image + ")"}}>
+    <div className={classes.container}>
       <Header
         color="transparent"
         routes={dashboardRoutes}
@@ -43,8 +45,8 @@ export default function LandingPage(props) {
         }}
         {...rest}
       />
-      <div filter image={require("assets/img/vdc-background.jpg")}>
-        <div className={classes.container}>
+      <div>
+        <div>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>PMINE</h1>
@@ -58,11 +60,9 @@ export default function LandingPage(props) {
         </div>
       </div>
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
-          <ProductSection />
-          <TeamSection />
-          <WorkSection />
-        </div>
+        <ProductSection />
+        {/* <TeamSection />
+        <WorkSection /> */}
       </div>
       {/* <Footer /> */}
     </div>
