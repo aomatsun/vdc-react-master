@@ -32,13 +32,21 @@ import vdcLogo from "assets/img/vdc-logo.png";
 const useStyles = makeStyles(styles);
 
 const links = [
-  { title: "Per Airdrop Claim!", href: "per-airdrop-claim" },
-  { title: "Pmine loans", href: "pmine-loans" },
-  { title: "Create IOST account", href: "https://sonata.asia/accountCreation" },
-  { title: "IMATCH", href: "imatch" },
-  { title: "whitepaper", href: "powermine-whitepaper" },
-  { title: "swap-iost/trx", href: "https://coinswitch.co/?ref=O86FUWI24E" },
+  { title: "Home", href: "" },
+  { title: "Swap", href: "swap" },
+  { title: "Liquidity", href: "liquidity" },
+  { title: "Farming", href: "farming" },
+  { title: "Treasury", href: "treasury" },
 ];
+
+// const links = [
+//   { title: "Per Airdrop Claim!", href: "per-airdrop-claim" },
+//   { title: "Pmine loans", href: "pmine-loans" },
+//   { title: "Create IOST account", href: "https://sonata.asia/accountCreation" },
+//   { title: "IMATCH", href: "imatch" },
+//   { title: "whitepaper", href: "powermine-whitepaper" },
+//   { title: "swap-iost/trx", href: "https://coinswitch.co/?ref=O86FUWI24E" },
+// ];
 
 const imgRows = [
   { id: "thechosenone", title: "TheChosenOne!", href: "thechosenone", img: iconLink1, width: 150, margin: -5 },
@@ -48,71 +56,82 @@ const imgRows = [
   { id: "powermine", title: "Powermine warriors get ready!!", href: "", img: iconLink5, width: 200, margin: -15 },
 ];
 
+const btnStyle = {
+  display: "inline-block",
+  fontWeight: "400",
+  // color: "#212529",
+  textAlign: "center",
+  verticalAlign: "middle",
+  color: "#17a2b8",
+  borderColor: "#17a2b8",
+  // webkit - user - select: none,
+  // -moz - user - select: none,
+  // -ms - user - select: none,
+  // user - select: none,
+  backgroundColor: "transparent",
+  border: "1px solid",
+  padding: ".375rem .75rem",
+  fontSize: "1rem",
+  lineHeight: "1.5",
+  borderRadius: ".25rem"
+}
+
 export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <div>
-    <List className={classes.list}>
-      {
-        links.map((row, index) => (
-          <ListItem className={classes.listItem}>
-            <Button
-              href={row.href}
-              color="transparent"
-              target="_blank"
-              className={classes.navLink}
-            >
-              {row.title}
-            </Button>
-          </ListItem>
-        ))
-      }
-      <ListItem className={classes.listItem}>
-        <Button
-          href="https://t.me/powermineclub"
-          target="_blank"
-          color="transparent"
-          className={classes.navLink}
-        >
-          <img src={telegram} alt="..." width="25" />
-          {/* <i className={classes.socialIcons + " fab fa-telegram"} /> */}
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-          color="transparent"
-          href="https://discord.gg/M8XXzGy"
-          target="_blank"
-          className={classes.navLink}
-        >
-          <img src={discord} alt="..." width="25" />
-          {/* <i className={classes.socialIcons + " fab fa-discord"} /> */}
-        </Button>
-      </ListItem>
-    </List>
-    <List>
-      {
-        imgRows.map((row, index) => (
-          <ListItem className={classes.listItem}>
-            <Tooltip
-              id={row.id}
-              title={row.title}
-              placement={window.innerWidth > 959 ? "top" : "left"}
-              classes={{ tooltip: classes.tooltip }}
-            >
+      <List className={classes.list}>
+        {
+          links.map((row, index) => (
+            <ListItem className={classes.listItem}>
               <Button
-                color="transparent"
                 href={row.href}
+                color="transparent"
                 target="_blank"
                 className={classes.navLink}
               >
-              <img src={row.img} alt="..." width={row.width} margin-top={row.margin}/>
+                {row.title}
               </Button>
-            </Tooltip>
-          </ListItem>
-        ))
-      }
-    </List>
+            </ListItem>
+          ))
+        }
+        <ListItem className={classes.listItem}>
+          <Button
+            href=""
+            target="_blank"
+            color="transparent"
+            className={classes.navLink}
+            // style={{ color: '#17a2b8', borderColor: '#17a2b8', border: '1px solid' }}
+            style={btnStyle}
+          >
+            Connect
+          </Button>
+        </ListItem>
+      </List>
+      
+      <List>
+        {
+          imgRows.map((row, index) => (
+            <ListItem className={classes.listItem}>
+              <Tooltip
+                id={row.id}
+                title={row.title}
+                placement={window.innerWidth > 959 ? "top" : "left"}
+                classes={{ tooltip: classes.tooltip }}
+              >
+                <Button
+                  color="transparent"
+                  href={row.href}
+                  target="_blank"
+                  className={classes.navLink}
+                >
+                <img src={row.img} alt="..." width={row.width} margin-top={row.margin}/>
+                </Button>
+              </Tooltip>
+            </ListItem>
+          ))
+        }
+      </List>
     </div>
   );
 }

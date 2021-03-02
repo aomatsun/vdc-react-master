@@ -6,6 +6,7 @@ const landingPageStyle = {
     backgroundImage: "url(" + image + ")",
     // backgroundPosition: 'center',
     backgroundSize: 'cover',
+    backgroundAttachment: 'fixed',
     backgroundRepeat: 'no-repeat',    
     zIndex: "12",
     color: "#FFFFFF",
