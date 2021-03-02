@@ -39,6 +39,10 @@ const headerStyle = {
     position: "fixed",
     zIndex: "1100"
   },
+  logo: {
+    margin: 0,
+    paddingLeft: "20px"
+  },
   container: {
     ...container,
     minHeight: "50px",

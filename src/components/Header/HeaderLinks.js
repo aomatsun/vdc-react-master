@@ -26,7 +26,7 @@ import iconLink1 from "assets/img/thechosenone-logo.png";
 import iconLink2 from "assets/img/epic-logo.png";
 import iconLink3 from "assets/img/iChips-logo.png";
 import iconLink4 from "assets/img/powerdefi.png";
-import iconLink5 from "assets/img/Powerminer-logo.png";
+import iconLink5 from "assets/img/Powerminer.png";
 import vdcLogo from "assets/img/vdc-logo.png";
 
 const useStyles = makeStyles(styles);
@@ -41,11 +41,11 @@ const links = [
 ];
 
 const imgRows = [
-  { id: "thechosenone", title: "TheChosenOne!", href: "thechosenone", img: iconLink1 },
-  { id: "epic", title: "EPIC!", href: "epic", img: iconLink2 },
-  { id: "ichips", title: "ICHIPS!", href: "iChips", img: iconLink3 },
-  { id: "powerdefi", title: "Powermine warriors get ready!", href: "powerdef.io", img: iconLink4 },
-  { id: "powermine", title: "Powermine warriors get ready!!", href: "", img: iconLink5 },
+  { id: "thechosenone", title: "TheChosenOne!", href: "thechosenone", img: iconLink1, width: 150, margin: -5 },
+  { id: "epic", title: "EPIC!", href: "epic", img: iconLink2, width: 134, margin: -20 },
+  { id: "ichips", title: "ICHIPS!", href: "iChips", img: iconLink3, width: 150, margin: -15 },
+  { id: "powerdefi", title: "Powermine warriors get ready!", href: "powerdef.io", img: iconLink4, width: 200, margin: -15 },
+  { id: "powermine", title: "Powermine warriors get ready!!", href: "", img: iconLink5, width: 200, margin: -15 },
 ];
 
 export default function HeaderLinks(props) {
@@ -106,7 +106,7 @@ export default function HeaderLinks(props) {
                 target="_blank"
                 className={classes.navLink}
               >
-              <img src={row.img} alt="..." width="100" />
+              <img src={row.img} alt="..." width={row.width} margin-top={row.margin}/>
               </Button>
             </Tooltip>
           </ListItem>

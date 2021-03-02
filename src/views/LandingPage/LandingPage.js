@@ -95,7 +95,7 @@ export default function LandingPage(props) {
         color="transparent"
         background={vdcLogo}
         routes={dashboardRoutes}
-        brand={ <img src={vdcLogo} alt="profile" style={{float:'left',height:'70px', marginTop:'10px'}} />}
+        brand={ <img src={vdcLogo} alt="profile" style={{float:'left',height:'100px', marginTop:'10px'}} />}
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
