@@ -17,7 +17,6 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
-import Snowfall from "react-snowfall"
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
@@ -97,7 +96,6 @@ export default function LandingPage(props) {
   return (
     // <div style={{backgroundImage: "url(" + image + ")"}}>
     <div className={classes.container}>
-      <Snowfall color="yellow" speed="100" />
       <Header
         color="transparent"
         background={vdcLogo}
